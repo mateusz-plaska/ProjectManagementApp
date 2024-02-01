@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="723.0" prefWidth="1251.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mplaska.projectmanagementapp.controllers._subtasks.SubtasksViewController">
+   <center>
+      <ScrollPane prefHeight="518.0" prefWidth="922.0" BorderPane.alignment="CENTER">
+         <content>
+            <TableView fx:id="table" prefHeight="512.0" prefWidth="966.0">
+               <columns>
+                  <TableColumn prefWidth="141.8666631579399" text="Name" />
+                  <TableColumn prefWidth="178.13333892822266" text="Description" />
+                  <TableColumn minWidth="0.0" prefWidth="106.13339233398438" text="Priority" />
+                  <TableColumn minWidth="7.20001220703125" prefWidth="129.60000610351562" text="Deadline" />
+                  <TableColumn prefWidth="128.7999267578125" text="Assigned person" />
+                  <TableColumn minWidth="0.0" prefWidth="72.7999267578125" text="Grade" />
+                  <TableColumn prefWidth="96.26678466796875" text="Finished" />
+                  <TableColumn prefWidth="107.73321533203125" />
+               </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <ButtonBar prefHeight="66.0" prefWidth="1074.0" BorderPane.alignment="BOTTOM_CENTER">
+         <buttons>
+            <Button alignment="CENTER" contentDisplay="TOP" lineSpacing="50.0" mnemonicParsing="false" onAction="#goToProjects" prefHeight="30.0" prefWidth="586.0" text="Projects">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="taskViewButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToTasks" prefHeight="30.0" prefWidth="540.0" text="Tasks">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </buttons>
+         <padding>
+            <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </ButtonBar>
+   </bottom>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="518.0" prefWidth="283.0" spacing="35.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#openAddSubtaskMode" prefHeight="42.0" prefWidth="139.0" text="Add new subtask" />
+            <Button mnemonicParsing="false" onAction="#openEditSubtaskMode" prefHeight="42.0" prefWidth="141.0" text="Edit subtask" />
+            <Button mnemonicParsing="false" onAction="#deleteSubtasks" prefHeight="46.0" prefWidth="144.0" text="Delete subtasks" />
+            <Button layoutX="87.0" layoutY="185.0" mnemonicParsing="false" onAction="#evaluateSubtask" prefHeight="46.0" prefWidth="144.0" text="Evaluate subtask" />
+            <HBox prefHeight="75.0" prefWidth="250.0">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="78.0" text="Search text">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="searchBox" prefHeight="38.0" prefWidth="125.0" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="40.0" right="25.0" top="20.0" />
+         </padding>
+      </VBox>
+   </right>
+   <top>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="139.0" prefWidth="1224.0" BorderPane.alignment="CENTER">
+        <items>
+            <MenuBar prefHeight="29.0" prefWidth="1250.0" />
+            <VBox prefHeight="94.0" prefWidth="1250.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="467.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="121.0" text="Task name:" />
+                        <Label fx:id="taskNameField" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="123.0" text="&quot;&quot;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="512.0" layoutY="14.0" prefHeight="32.0" prefWidth="167.0" text="Assigned project name: " />
+                        <Label fx:id="assignedProjectNameField" alignment="CENTER" contentDisplay="CENTER" layoutX="551.0" layoutY="13.0" prefHeight="34.0" prefWidth="123.0" text="&quot;&quot;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="117.0" text="Completed subtasks: " />
+                        <Label fx:id="completedSubtasksField" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="66.0" text="&quot;&quot;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ProgressBar fx:id="progressBar" prefHeight="30.0" prefWidth="174.0" progress="0.0" />
+                        <Label fx:id="percentValueField" alignment="CENTER" contentDisplay="CENTER" layoutX="124.0" layoutY="17.0" prefHeight="30.0" prefWidth="66.0" text="&quot;&quot;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+        </items>
+      </SplitPane>
+   </top>
+</BorderPane>
