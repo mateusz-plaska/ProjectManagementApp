@@ -88,7 +88,7 @@ public class Task extends TaskElement implements Serializable {
     }
 
     /**
-     * used in tests
+     * used in test datasets
      */
     public void setAdditionDate(LocalDate date) {
         this.additionDate = date;
