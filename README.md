@@ -1,7 +1,7 @@
 
 # Project management appliaction
 
-This is a desktop appliaction with a graphical user interface for managing projects and tasks.
+This is a desktop application with a graphical user interface for managing projects and tasks.
 
 ## Install and open
 Clone the repository and open the project in Java IDE (IntelliJ IDEA is recommended). Then run the application.
