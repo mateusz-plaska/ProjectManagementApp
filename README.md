@@ -14,6 +14,7 @@ Read and go through the documentation to see all the features and options the ap
 
 
 ## Stack
-Java
+- Java
+- JavaFX, to design UI with Scenebuilder
 
 
